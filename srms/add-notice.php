@@ -9,6 +9,7 @@ if(isset($_POST['submit']))
 {
 $ntitle=$_POST['noticetitle'];
 $ndetails=$_POST['noticedetails']; 
+$sql="INSERT INTO  tblnotice(noticeTitle,noticeDetails) VALUES(:ntitle,:ndetails)";
 $query = $dbh->prepare($sql);
 $query->bindParam(':ntitle',$ntitle,PDO::PARAM_STR);
 $query->bindParam(':ndetails',$ndetails,PDO::PARAM_STR);
